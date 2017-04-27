@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+}
+
+body {
+    background: #f5f5f5;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #483a3a
+}
+
+a {
+    text-decoration: none;
+    color: #483a3a
+}
+
+header {
+    height: 110px;
+    background: #f3ca3d;
+}
+
+header div.inner {
+    height: 110px;
+}
+
+header div.cartoon {
+    height: 110px;
+    width: 380px;
+    position: absolute;
+    background: url(bg.png) no-repeat center bottom;
+    background-size: 340px 110px;
+    top: 0;
+    right: -143px;
+}
+
+header a.logo {
+    display: inline-block;
+    height: 84px;
+    vertical-align: top;
+    margin-top: 13px;
+}
+
+nav {
+    height: 68px;
+    background: white;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav li {
+    display: inline-block;
+    height: 68px;
+    line-height: 68px;
+    padding: 0 20px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+nav li:hover {
+    background: #483a3a;
+}
+
+nav li:hover a {
+    color: white;
+}
+
+nav button.login {
+    height: 28px;
+    line-height: 28px;
+    width: 70px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+    border: 1px solid #483a3a;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    padding: 0;
+    background: white;
+    outline: none;
+    cursor: pointer;
+}
+
+div.top {
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+div.inner {
+    width: 1080px;
+    position: relative;
+    margin: 0 auto;
+}
+
+div.inner:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+main div.banner {
+    height: 413px;
+    background: #4b9afc;
+}
+
+div.video {
+    margin-bottom: 110px;
+}
+
+div.video_list {
+    margin-top: 20px;
+}
+
+div.video_list div.head {
+    height: 70px;
+    line-height: 70px;
+}
+
+div.video_list div.head h1 {
+    font-size: 28px;
+    display: inline-block;
+    margin: 0;
+    margin-right: 22px;
+    vertical-align: top;
+    font-weight: normal;
+}
+
+div.video_list div.head ul.season {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+div.video_list div.head ul.season li {
+    height: 70px;
+    line-height: 70px;
+    margin-left: 39px;
+    display: inline-block;
+}
+
+div.video_list div.head ul.season li.active a {
+    color: #e2b20e;
+}
+
+div.video_list ul.video {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+div.video_list ul.video li {
+    display: inline-block;
+    height: 247px;
+    width: 255px;
+    margin-right: 20px;
+    font-size: 16px;;
+}
+
+div.video_list ul.video li:last-child {
+    margin: 0;
+}
+
+div.video_list div.humbnail {
+    display: block;
+    height: 158px;
+    width: 255px;
+}
+
+div.video_list div.humbnail img {
+    display: block;
+}
+
+div.video_list div.play {
+    margin-top: -34px;
+    height: 34px;
+    line-height: 34px;
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+    position: relative;
+}
+
+div.video_list div.play div.icon {
+    height: 20px;
+    width: 30px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 7px;
+    left: 20px;
+}
+
+div.video_list div.play div.icon:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 8px white solid;
+    border-top: 4px transparent solid;
+    border-bottom: 4px transparent solid;
+    display: block;
+    left: 11px;
+    top: 5px;
+    position: absolute;
+}
+
+div.video_list div.play div.duration {
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+div.video_list div.meta {
+    height: 89px;
+    background: white;
+    padding: 17px 20px;
+}
+
+div.video_list div.meta div.info {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+div.video_list div.meta span.publish_date {
+    float: right;
+}
+
+footer {
+    height: 288px;
+    background: #483a3a;
+}
