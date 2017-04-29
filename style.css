@@ -1,3 +1,19 @@
+@keyframes live_left {
+    0%   {top: 7px; box-shadow: 4px -7px 0 white;}
+    25%   {top: 0px; box-shadow: 4px 5px 0 white;}
+    50%   {top: 8px; box-shadow: 4px -7px 0 white;}
+    75%   {top: 0; box-shadow: 4px 0 0 white;}
+    100%   {top: 7px; box-shadow: 4px -7px 0 white;}
+}
+
+@keyframes live_right {
+    0%   {top: 4px; box-shadow: 4px 4px 0 white;}
+    25%   {top: 5px; box-shadow: 4px -5px 0 white;}
+    50%   {top: 4px; box-shadow: 4px 1px 0 white;}
+    75%   {top: 6px; box-shadow: 4px -4px 0 white;}
+    100%   {top: 4px; box-shadow: 4px 4px 0 white;}
+}
+
 * {
     box-sizing: border-box;
 }
@@ -45,6 +61,10 @@ header a.logo {
     margin-top: 13px;
 }
 
+header a.logo img {
+    border: 0;
+}
+
 nav {
     height: 68px;
     background: white;
@@ -64,17 +84,27 @@ nav li {
     padding: 0 20px;
     margin-right: 50px;
     cursor: pointer;
+    transition: all 0.3s;
+    transition-delay: 0.15s;
 }
 
+nav li.active,
 nav li:hover {
     background: #483a3a;
 }
 
+nav li a {
+    transition: all 0.3s;
+    transition-delay: 0.15s;
+}
+
+nav li.active a,
 nav li:hover a {
     color: white;
 }
 
 nav button.login {
+    font-family: Arial, Helvetica, sans-serif, 'Microsoft YaHei';
     height: 28px;
     line-height: 28px;
     width: 70px;
@@ -89,6 +119,13 @@ nav button.login {
     background: white;
     outline: none;
     cursor: pointer;
+    transition: all 0.3s;
+    transition-delay: 0.15s;
+}
+
+nav button.login:hover {
+    background: #f3ca3d;
+    border-color: #f3ca3d;
 }
 
 div.top {
@@ -125,6 +162,12 @@ div.video_list div.head {
     line-height: 70px;
 }
 
+div.video_list div.head:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 div.video_list div.head h1 {
     font-size: 28px;
     display: inline-block;
@@ -149,7 +192,13 @@ div.video_list div.head ul.season li {
     display: inline-block;
 }
 
-div.video_list div.head ul.season li.active a {
+div.video_list div.head ul.season li a {
+    transition: all 0.3s;
+    transition-delay: 0.15s;
+}
+
+div.video_list div.head ul.season li.active a,
+div.video_list div.head ul.season li a:hover {
     color: #e2b20e;
 }
 
@@ -159,6 +208,7 @@ div.video_list ul.video {
     margin: 0;
     padding: 0;
     font-size: 0;
+    margin-right: -20px;
 }
 
 div.video_list ul.video li {
@@ -166,30 +216,80 @@ div.video_list ul.video li {
     height: 247px;
     width: 255px;
     margin-right: 20px;
-    font-size: 16px;;
+    font-size: 16px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    transition: all 0.5s;
+    transition-delay: 0.25s;
+    cursor: pointer;
 }
 
-div.video_list ul.video li:last-child {
-    margin: 0;
+div.video_list ul.video li:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-div.video_list div.humbnail {
+div.video_list div.thumbnail {
     display: block;
     height: 158px;
     width: 255px;
+    position: relative;
 }
 
-div.video_list div.humbnail img {
+div.video_list div.thumbnail img {
     display: block;
 }
 
+div.video_list div.live {
+    width: 26px;
+    height: 26px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 6px solid transparent;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    transition-delay: 0.15s;
+}
+
+div.video_list ul.video li:hover div.live {
+    opacity: 1;
+}
+
+div.video_list div.live:before {
+    content: "";
+    display: block;
+    float: left;
+    width: 2px;
+    height: 14px;
+    background: white;
+    box-shadow: 4px -7px 0 white;
+    position: relative;
+    top: 7px;
+    animation: live_left 0.5s linear infinite;
+}
+
+div.video_list div.live:after {
+    content: "";
+    display: block;
+    margin-left: 8px;
+    width: 2px;
+    height: 14px;
+    background: white;
+    box-shadow: 4px 4px 0 white;
+    position: relative;
+    top: 4px;
+    animation: live_right 0.5s linear infinite;
+}
+
 div.video_list div.play {
-    margin-top: -34px;
+    width: 100%;
     height: 34px;
     line-height: 34px;
     background: rgba(0, 0, 0, 0.35);
     color: white;
-    position: relative;
+    position: absolute;
+    bottom: 0;
 }
 
 div.video_list div.play div.icon {
@@ -202,6 +302,13 @@ div.video_list div.play div.icon {
     position: absolute;
     top: 7px;
     left: 20px;
+    transition: all 0.3s;
+    transition-delay: 0.15s;
+}
+
+div.video_list ul.video li:hover div.play div.icon {
+    border-color: #f3ca3d;
+    background: #f3ca3d;
 }
 
 div.video_list div.play div.icon:before {
@@ -240,6 +347,16 @@ div.video_list div.meta div.info {
 
 div.video_list div.meta span.publish_date {
     float: right;
+}
+
+div.video_list div.head a.more {
+    float: right;
+    transition: all 0.3s;
+    transition-delay: 0.15s;
+}
+
+div.video_list div.head a.more:hover {
+    color: #e2b20e;
 }
 
 footer {
