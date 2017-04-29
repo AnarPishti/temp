@@ -237,11 +237,9 @@ div.video_list div.thumbnail {
     overflow: hidden;
 }
 
-div.video_list div.thumbnail img {
+div.video_list li.new div.thumbnail:after {
+    content: "最新";
     display: block;
-}
-
-div.video_list div.new {
     font-size: 12.5px;
     background: #f3ca3d;
     width: 70px;
@@ -251,10 +249,13 @@ div.video_list div.new {
     transform-origin: 0 0;
     text-align: center;
     position: absolute;
-    top: 0;
-    left: 0;
+    box-sizing: border-box;
     top: 12px;
     left: -27px;
+}
+
+div.video_list div.thumbnail img {
+    display: block;
 }
 
 div.video_list div.live {
