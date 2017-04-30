@@ -284,6 +284,7 @@ div.video_list div.thumbnail video {
     transition-delay: 0.15s;
     background: black;
     display: none;
+    margin-left: -13px;
 }
 
 div.video_list li:hover div.thumbnail video {
