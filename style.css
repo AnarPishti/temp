@@ -14,6 +14,22 @@
     100%   {top: 4px; box-shadow: 4px 4px 0 white;}
 }
 
+@keyframes live_yellow_left {
+    0%   {top: 7px; box-shadow: 4px -7px 0 #f3ca3d;}
+    25%   {top: 0px; box-shadow: 4px 5px 0 #f3ca3d;}
+    50%   {top: 8px; box-shadow: 4px -7px 0 #f3ca3d;}
+    75%   {top: 0; box-shadow: 4px 0 0 #f3ca3d;}
+    100%   {top: 7px; box-shadow: 4px -7px 0 #f3ca3d;}
+}
+
+@keyframes live_yellow_right {
+    0%   {top: 4px; box-shadow: 4px 4px 0 #f3ca3d;}
+    25%   {top: 5px; box-shadow: 4px -5px 0 #f3ca3d;}
+    50%   {top: 4px; box-shadow: 4px 1px 0 #f3ca3d;}
+    75%   {top: 6px; box-shadow: 4px -4px 0 #f3ca3d;}
+    100%   {top: 4px; box-shadow: 4px 4px 0 #f3ca3d;}
+}
+
 * {
     box-sizing: border-box;
 }
@@ -377,6 +393,251 @@ div.video_list div.head a.more {
 
 div.video_list div.head a.more:hover {
     color: #e2b20e;
+}
+
+h1.video_title {
+    height: 20px;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 40px 0 30px 0;
+}
+
+h1.video_title span.brand {
+    margin-right: 34px;
+}
+
+h1.video_title span.season {
+    margin-right: 20px;
+}
+
+div.video_area:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+div.video_area div.player {
+    float: left;
+    height: 540px;
+    width: 820px;
+    background: black;
+}
+
+div.video_area div.season_list {
+    height: 540px;
+    width: 260px;
+    margin-left: 820px;
+    background: white;
+    overflow-y: auto;
+}
+
+div.video_area div.season_list ul {
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+
+div.video_area div.season_list li {
+    margin-bottom: 10px;
+    height: 72px;
+}
+
+div.video_area div.season_list li:last-child {
+    margin: 0;
+}
+
+div.video_area div.season_list li:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+div.video_area div.season_list div.thumbnail {
+    position: relative;
+    width: 116px;
+    height: 72px;
+    background: #ccc;
+    float: left;
+}
+
+div.video_area div.season_list div.thumbnail div.duration {
+    position: absolute;
+    width: 100%;
+    padding: 0 10px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+    text-align: right;
+    bottom: 0;
+}
+
+div.video_area div.season_list div.meta {
+    position: relative;
+    padding: 10px 10px 10px 126px;
+    height: 72px;
+    font-size: 12px;
+}
+
+div.video_area div.season_list div.meta div.title {
+    color: #333;
+}
+
+div.video_area div.season_list li.live div.meta div.title {
+    color: #f3ca3d;
+}
+
+div.video_area div.season_list div.meta div.live {
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+}
+
+div.video_area div.season_list li.live div.meta div.live {
+    display: block;
+}
+
+div.video_area div.season_list div.meta div.live:before {
+    content: "";
+    display: block;
+    float: left;
+    width: 2px;
+    height: 14px;
+    background: #f3ca3d;
+    box-shadow: 4px -7px 0 #f3ca3d;
+    position: relative;
+    top: 7px;
+    animation: live_yellow_left 0.5s linear infinite;
+}
+
+div.video_area div.season_list div.meta div.live:after {
+    content: "";
+    display: block;
+    margin-left: 8px;
+    width: 2px;
+    height: 14px;
+    background: #f3ca3d;
+    box-shadow: 4px 4px 0 #f3ca3d;
+    position: relative;
+    top: 4px;
+    animation: live_yellow_right 0.5s linear infinite;
+}
+
+div.video_area div.season_list div.meta div.play {
+    position: absolute;
+    bottom: 10px;
+    color: #6e6e6e;
+}
+
+div.video_meta {
+    height: 68px;
+    margin-top: 22px;
+    margin-bottom: 200px;
+    background: white;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    padding: 26px;
+    color: #b0b0b0;
+}
+
+div.video_meta:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+div.video_meta ul.info {
+    list-style: none;
+    font-size: 0;
+    height: 14px;
+    line-height: 14px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+div.video_meta ul.info li {
+    font-size: 14px;
+    margin-right: 40px;
+    padding-left: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+div.video_meta ul.info li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 0;
+    top: 0;
+    background-size: contain;
+}
+
+div.video_meta ul.info li.play:before {
+    background-image: url(play.png);
+}
+
+div.video_meta ul.info li.comment:before {
+    background-image: url(comment.png);
+}
+
+div.video_meta ul.info li.good:before {
+    background-image: url(good.png);
+}
+
+div.video_meta ul.info li.like:before {
+    background-image: url(like.png);
+}
+
+div.video_meta div.share {
+    float: right;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+}
+
+div.video_meta div.share ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    display: inline-block;
+    vertical-align: bottom;
+    height: 14px;
+}
+
+div.video_meta div.share ul li {
+    margin-left: 18px;
+    position: relative;
+    display: inline-block;
+    width: 26px;
+}
+
+div.video_meta div.share ul li:before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    margin-top: -8px;
+    display: block;
+    background-size: contain;
+}
+
+div.video_meta div.share ul li.weixin:before {
+    background-image: url(weixin.png);
+}
+
+div.video_meta div.share ul li.qq:before {
+    background-image: url(qq.png);
+}
+
+div.video_meta div.share ul li.weibo:before {
+    background-image: url(weibo.png);
 }
 
 footer {
