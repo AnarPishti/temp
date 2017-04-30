@@ -623,7 +623,7 @@ div.video_meta div.share ul li:before {
     content: "";
     width: 26px;
     height: 26px;
-    margin-top: -8px;
+    margin-top: -6px;
     display: block;
     background-size: contain;
 }
