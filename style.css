@@ -460,17 +460,46 @@ div.video_area div.season_list div.thumbnail {
     float: left;
 }
 
+div.video_area div.season_list li div.thumbnail:after {
+    content: "";
+    width: 116px;
+    height: 72px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #f3ca3d;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: all 0.3s;
+    transition-delay: 0.15s;
+}
+
+div.video_area div.season_list li:hover div.thumbnail:after,
+div.video_area div.season_list li.live div.thumbnail:after {
+    opacity: 1;
+}
+
 div.video_area div.season_list div.thumbnail div.duration {
     position: absolute;
-    width: 100%;
-    padding: 0 10px;
-    height: 14px;
-    line-height: 14px;
-    font-size: 12px;
+    width: 125%;
+    padding: 0 12.5px;
+    height: 17.5px;
+    line-height: 17.5px;
+    font-size: 12.5px;
     background: rgba(0, 0, 0, 0.35);
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(50%, rgba(0,0,0,0.35)), color-stop(100%, rgba(0,0,0,0.35)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 100%);
     color: white;
     text-align: right;
     bottom: 0;
+    left: 0;
+    transform-origin: bottom left;
+    transform: scale(0.8);
 }
 
 div.video_area div.season_list div.meta {
@@ -482,8 +511,11 @@ div.video_area div.season_list div.meta {
 
 div.video_area div.season_list div.meta div.title {
     color: #333;
+    transition: all 0.3s;
+    transition-delay: 0.15s;
 }
 
+div.video_area div.season_list li:hover div.meta div.title,
 div.video_area div.season_list li.live div.meta div.title {
     color: #f3ca3d;
 }
@@ -495,11 +527,8 @@ div.video_area div.season_list div.meta div.live {
     position: absolute;
     top: 10px;
     right: 10px;
-    display: none;
-}
-
-div.video_area div.season_list li.live div.meta div.live {
-    display: block;
+    transition: all 0.3s;
+    transition-delay: 0.15s;
 }
 
 div.video_area div.season_list div.meta div.live:before {
@@ -508,11 +537,19 @@ div.video_area div.season_list div.meta div.live:before {
     float: left;
     width: 2px;
     height: 14px;
-    background: #f3ca3d;
-    box-shadow: 4px -7px 0 #f3ca3d;
+    background: #b0b0b0;
+    box-shadow: 4px -7px 0 #b0b0b0;
     position: relative;
     top: 7px;
-    animation: live_yellow_left 0.5s linear infinite;
+    transition: all 0.3s;
+    transition-delay: 0.15s;
+}
+
+div.video_area div.season_list li:hover div.meta div.live:before,
+div.video_area div.season_list li.live div.meta div.live:before {
+    background: #f3ca3d;
+    box-shadow: 4px -7px 0 #f3ca3d;
+    animation: live_yellow_left 0.5s linear 0.45s infinite;
 }
 
 div.video_area div.season_list div.meta div.live:after {
@@ -521,11 +558,19 @@ div.video_area div.season_list div.meta div.live:after {
     margin-left: 8px;
     width: 2px;
     height: 14px;
-    background: #f3ca3d;
-    box-shadow: 4px 4px 0 #f3ca3d;
+    background: #b0b0b0;
+    box-shadow: 4px 4px 0 #b0b0b0;
     position: relative;
     top: 4px;
-    animation: live_yellow_right 0.5s linear infinite;
+    transition: all 0.3s;
+    transition-delay: 0.15s;
+}
+
+div.video_area div.season_list li:hover div.meta div.live:after,
+div.video_area div.season_list li.live div.meta div.live:after {
+    background: #f3ca3d;
+    box-shadow: 4px 4px 0 #f3ca3d;
+    animation: live_yellow_right 0.5s linear 0.45s infinite;
 }
 
 div.video_area div.season_list div.meta div.play {
